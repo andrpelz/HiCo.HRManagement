@@ -1,0 +1,60 @@
+﻿body {
+    background-color: #e8e8e8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+.hr-content {
+    margin-top: 50px;
+}
+
+hr {
+    border-color: #337ab7;
+}
+
+.hr-button-grp {
+    margin-top: 25px;
+}
+
+.hr-button {
+    min-width: 200px;
+    border-color: #337ab7;
+    background-color: white;
+    color: black;
+}
+
+.hr-btn-td {
+    padding: 4px !important;
+}
+
+.hr-button.td {
+    min-width: 90px;
+    margin: 0;
+    padding: 3px 10px;
+}
+
+.hr-btn-icon-new {
+    color: forestgreen;
+    font-size: 12pt;
+}
+
+.hr-btn-icon-edit {
+    color: #ca9c07;
+    font-size: 12pt;
+}
+
+.hr-btn-icon-del {
+    color: darkred;
+    font-size: 12pt;
+}
+
+.hr-btn-icon-save {
+    color: #337ab7;
+    font-size: 12pt;
+}
+
+.hr-btn-icon-cancel {
+    color: gray;
+    font-size: 12pt;
+}

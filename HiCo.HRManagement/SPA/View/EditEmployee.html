@@ -1,0 +1,35 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form name="employeForm" ng-submit="submitForm(employeForm.$valid)" novalidate>
+                <div class="form-group">
+                    <label for="firstname">Firstname</label>
+                    <input type="text" class="form-control" name="firstname" ng-model="employee.FirstName" required ng-minlength="3" ng-maxlength="50" />
+                    <p ng-show="employeForm.firstname.$error.required" class="text-danger">Firstname is required.</p>
+                    <p ng-show="employeForm.firstname.$error.minlength" class="text-danger">Firstname is too short.</p>
+                    <p ng-show="employeForm.firstname.$error.maxlength" class="text-danger">Firstname is too long.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" class="form-control" name="lastname" ng-model="employee.LastName" required ng-minlength="3" ng-maxlength="50" />
+                    <p ng-show="employeForm.lastname.$error.required" class="text-danger">Lastname is required.</p>
+                    <p ng-show="employeForm.lastname.$error.minlength" class="text-danger">Lastname is too short.</p>
+                    <p ng-show="employeForm.lastname.$error.maxlength" class="text-danger">Lastname is too long.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" name="age" ng-model="employee.Age" ng-min="1" ng-max="100" />
+                    <p ng-show="employeForm.age.$error.min" class="text-danger">Age musst between 1 and 100.</p>
+                    <p ng-show="employeForm.age.$error.max" class="text-danger">Age musst between 1 and 100.</p>
+                </div>
+                
+                <div class="hr-button-grp">
+                    <button class="btn btn-primary hr-button" type="submit" ng-disabled="employeForm.$invalid"><span class="fa fa-floppy-o hr-btn-icon-save"></span>&nbsp;Save employee</button>
+                    <a class="btn btn-primary hr-button" href="#employee"><span class="fa fa-ban hr-btn-icon-cancel"></span>&nbsp;Cancel (back to list)</a>
+                </div>                  
+            </form>
+        </div>
+    </div>
+</div>

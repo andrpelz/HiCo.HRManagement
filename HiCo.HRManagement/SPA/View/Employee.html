@@ -1,0 +1,45 @@
+﻿<div class="container-fluid table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th width="20%">Edit</th>
+                <th width="25%">Firstname</th>
+                <th width="25%">Lastname</th>
+                <th width="7%">Age</th>
+                <th width="18%" colspan="2">Addresses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="emp in data.employee.data">
+                <td class="hr-btn-td">
+                    <a class="btn btn-primary hr-button td" href="#editemployee/{{emp.Id}}" title="Edit employee {{emp.FirstName}} {{emp.LastName}}">
+                        <span class="fa fa-pencil-square-o hr-btn-icon-edit"></span>&nbsp;Edit
+                    </a>
+                    <a class="btn btn-primary hr-button td" ng-click="deleteEmployee(emp.Id, emp.FirstName + ' ' + emp.LastName)" title="Delete employee {{emp.FirstName}} {{emp.LastName}}">
+                        <span class="fa fa-trash-o hr-btn-icon-del"></span>&nbsp;Delete
+                    </a>
+                </td>
+                <td><!--<a style="cursor: pointer" href="#editemployee/{{emp.Id}}">-->{{emp.FirstName}}<!--</a>--></td>
+                <td>{{emp.LastName}}</td>
+                <td>{{emp.Age}}</td>
+                <td width="3%">{{emp.Addresses.length}}</td>
+                <td width="17%" class="hr-btn-td">
+                    <a class="btn btn-primary hr-button td" href="#addresses/{{emp.Id}}" title="Edit addresses from employee {{emp.FirstName}} {{emp.LastName}}">
+                        <span class="fa fa-pencil-square-o hr-btn-icon-edit"></span>&nbsp;Edit addreses
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row hr-button-grp">
+        <div class="col-sm-6">
+            <a class="btn btn-primary hr-button" href="#editemployee/0"><span class="fa fa-plus-circle hr-btn-icon-new"></span>&nbsp;New employee</a>
+        </div>
+
+        <div class="col-sm-6 text-right">
+            <uib-pagination total-items="data.employee.totalItems" items-per-page="data.employee.itemsPerPage" ng-model="data.employee.currentPage" ng-change="pageChanged()"
+                            max-size="7" style="margin: 0"></uib-pagination>
+        </div>
+    </div>
+</div>

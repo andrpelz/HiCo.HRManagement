@@ -1,0 +1,34 @@
+﻿<div class="container-fluid table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th width="20%">Edit</th>
+                <th width="25%">Street</th>
+                <th width="10%">Zipcode</th>
+                <th width="25%">City</th>
+                <th width="20%">State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="adr in addresses">
+                <td class="hr-btn-td">
+                    <a class="btn btn-primary hr-button td" href="#editaddress/{{adr.Id}}/{{employeeId}}" title="Edit address {{adr.Street}}, {{adr.City}}">
+                        <span class="fa fa-pencil-square-o hr-btn-icon-edit"></span>&nbsp;Edit
+                    </a>
+                    <a class="btn btn-primary hr-button td" ng-click="deleteAddress(adr.Id, adr.Street + ', ' + adr.City)" title="Delete adress {{adr.Street}}, {{adr.City}}">
+                        <span class="fa fa-trash-o hr-btn-icon-del"></span>&nbsp;Delete
+                    </a>
+                </td>
+                <td>{{adr.Street}}</td>
+                <td>{{adr.Zip}}</td>
+                <td>{{adr.City}}</td>
+                <td>{{adr.State}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="hr-button-grp">
+        <a class="btn btn-primary hr-button" href="#editaddress/0/{{employeeId}}"><span class="fa fa-plus-circle hr-btn-icon-new"></span>&nbsp;New address</a>
+        <a class="btn btn-primary hr-button" href="#employee"><span class="fa fa-ban hr-btn-icon-cancel"></span>&nbsp;Cancel (back to employee list)</a>
+    </div>
+</div>
